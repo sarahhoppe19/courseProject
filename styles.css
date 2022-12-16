@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+#checkerBoard {
+  width: 845px;
+  height: 845px;
+  background-color: #ccc;
+  border: 10px solid #F5F5DC;
+  border-radius: 5px;
+  position: relative;
+}
+
+.square {
+  width: 103px;
+  height: 103px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.green {
+  background-image: url(greenTile.png);
+  background-size: cover;
+}
+
+.tblue {
+  background-color: #38b8e5;
+}
+
+.rules {
+  position: absolute;
+  float: right;
+}
+
+.check {
+  width: 103px;
+  height: 103px;
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+}
+
+.red {
+  background-image: url(redCheck.png);
+  background-size: cover;
+  background-position: center;
+  scale: 90%;
+  transform: rotate(180deg);
+}
+
+.blue {
+  background-image: url(blueCheck.png);
+  background-size: cover;
+  background-position: center;
+  scale: 90%;
+}
+
+.clicked {
+  border: 5px solid #fff;
+}
+
+#bc1 {
+  top: 721px;
+}
+
+#bc2 {
+  top: 721px;
+  left: 206px;
+}
+
+#bc3 {
+  top: 721px;
+  left: 412px;
+}
+
+#bc4 {
+  top: 721px;
+  left: 618px;
+}
+
+#bc5 {
+  top: 618px;
+  left: 103px;
+}
+
+#bc6 {
+  top: 618px;
+  left: 309px;
+}
+
+#bc7 {
+  top: 618px;
+  left: 515px;
+}
+
+#bc8 {
+  top: 618px;
+  left: 721px;
+}
+
+#bc9 {
+  top: 515px; 
+}
+
+#bc10 {
+  top: 515px;
+  left: 206px;
+}
+
+#bc11 {
+  top: 515px;
+  left: 412px;
+}
+
+#bc12 {
+  top: 515px;
+  left: 618px;
+}
+
+#rc1 {
+  left: 103px;
+}
+
+#rc2 {
+  left: 309px;
+}
+
+#rc3 {
+  left: 515px;
+}
+
+#rc4 {
+  left: 721px;
+}
+
+#rc5 {
+  top: 103px;
+}
+
+#rc6 {
+  top: 103px;
+  left: 206px;
+}
+
+#rc7 {
+  top: 103px;
+  left: 412px;
+}
+
+#rc8 {
+  top: 103px;
+  left: 618px;
+}
+
+#rc9 {
+  top: 206px;
+  left: 103px;
+}
+
+#rc10 {
+  top: 206px;
+  left: 309px;
+}
+
+#rc11 {
+  top: 206px;
+  left: 515px;
+}
+
+#rc12 {
+  top: 206px;
+  left: 721px;
+}

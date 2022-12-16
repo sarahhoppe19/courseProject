@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<!-- meta tags and title -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MP: Checkers</title>
+
+		<!-- external and on-page CSS goes here -->
+		<link rel="stylesheet" href="styles.css" media="all">
+		<style>
+			/* on-page CSS, if any, goes here */
+		</style>
+
+		<!-- external and on-page JavaScript goes here -->
+		<script type="text/javascript" src="scripts.js" defer></script>
+		<script>
+			// on-page JavaScript, if any, goes here
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="checkerBoard">
+      <!--FIRST ROW ON BOARD---------------------------------1-->
+      <div class="tblue square"></div>
+      <div class="green square" id="0"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="1"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="2"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="3"></div>
+      
+      <!--SECOND ROW ON BOARD---------------------------------2-->
+      <div class="green square" id="4"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="5"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="6"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="7"></div>
+      <div class="tblue square"></div>
+      
+      <!--THIRD ROW ON BOARD---------------------------------3-->
+      <div class="tblue square"></div>
+      <div class="green square" id="8"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="9"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="10"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="11"></div>
+      
+      <!--FOURTH ROW ON BOARD---------------------------------4-->
+      <div class="green square empty"></div>
+      <div class="tblue square"></div>
+      <div class="green square empty"></div>
+      <div class="tblue square"></div>
+      <div class="green square empty"></div>
+      <div class="tblue square"></div>
+      <div class="green square empty"></div>
+      <div class="tblue square"></div>
+      
+      <!--FIFTH ROW ON BOARD---------------------------------5-->
+      <div class="tblue square"></div>
+      <div class="green square empty"></div>
+      <div class="tblue square"></div>
+      <div class="green square empty"></div>
+      <div class="tblue square"></div>
+      <div class="green square empty"></div>
+      <div class="tblue square"></div>
+      <div class="green square empty"></div>
+      
+      <!--SIXTH ROW ON BOARD---------------------------------6-->
+      <div class="green square" id="12"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="13"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="14"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="15"></div>
+      <div class="tblue square"></div>
+      
+      <!--SEVENTH ROW ON BOARD---------------------------------7-->
+      <div class="tblue square"></div>
+      <div class="green square" id="16"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="17"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="18"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="19"></div>
+      
+      <!--EIGHTH ROW ON BOARD---------------------------------8-->
+      <div class="green square" id="20"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="21"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="22"></div>
+      <div class="tblue square"></div>
+      <div class="green square" id="23"></div>
+      <div class="tblue square"></div>
+      
+      <!--PLAYABLE CHECKER PIECES OF RED AND BLUE-------------------------------------------------BLACK--------------------->
+      <div class="blue check" id="bc1"></div>
+      <div class="blue check" id="bc2"></div>
+      <div class="blue check" id="bc3"></div>
+      <div class="blue check" id="bc4"></div>
+      <div class="blue check" id="bc5"></div>
+      <div class="blue check" id="bc6"></div>
+      <div class="blue check" id="bc7"></div>
+      <div class="blue check" id="bc8"></div>
+      <div class="blue check" id="bc9"></div>
+      <div class="blue check" id="bc10"></div>
+      <div class="blue check" id="bc11"></div>
+      <div class="blue check" id="bc12"></div>
+      <!-------------------------------------------------------------------------------------------RED----------------------->
+      <div class="red check" id="rc1"></div>
+      <div class="red check" id="rc2"></div>
+      <div class="red check" id="rc3"></div>
+      <div class="red check" id="rc4"></div>
+      <div class="red check" id="rc5"></div>
+      <div class="red check" id="rc6"></div>
+      <div class="red check" id="rc7"></div>
+      <div class="red check" id="rc8"></div>
+      <div class="red check" id="rc9"></div>
+      <div class="red check" id="rc10"></div>
+      <div class="red check" id="rc11"></div>
+      <div class="red check" id="rc12"></div>
+    </div>
+    
+    <div class="rules">
+      Rules:
+      Red player always goes first. 
+      Move diagonally.
+      Don't forget to jump over your opponent when you can!
+    </div>
+ 	</body>
+
+</html>
