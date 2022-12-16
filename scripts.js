@@ -141,23 +141,142 @@ function findEmptyLily() {
   checkJumpLily();
 }
 
+//looking to see if there are any jumps available for the player to make
+function checkJumpLily() {
+  if (turn) {
+    if (checkerBoard[selectedFrog.boardFrogIndex + 14] === null && cells[selectedFrog.boardFrogIndex + 14].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex + 7] >= 12) {
+      selectedFrog.fourteenthSpace = true;
+    }
+    
+    if (checkerBoard[selectedFrog.boardFrogIndex + 18] === null && cells[selectedFrog.boardFrogIndex + 18].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex + 9] >= 12) {
+      selectedFrog.eighteenthSpace = true;
+    }
+    
+    if (checkerBoard[selectedFrog.boardFrogIndex - 14] === null && cells[selectedFrog.boardFrogIndex - 14].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex - 7] >= 12) {
+      selectedFrog.minusFourteenthSpace = true;
+    }
+    
+    if (checkerBoard[selectedFrog.boardFrogIndex - 18] === null && cells[selectedFrog.boardFrogIndex - 18].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex - 9] >= 12) {
+      selectedFrog.minusEighteenthSpace = true;
+    }
+  } else {
+    if (checkerBoard[selectedFrog.boardFrogIndex + 14] === null && cells[selectedFrog.boardFrogIndex + 14].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex + 7] < 12 && checkerBoard[selectedFrog.boardFrogIndex + 7] !== null) {
+      selectedFrog.fourteenthSpace = true;
+    }
+    
+    if (checkerBoard[selectedFrog.boardFrogIndex + 18] === null && cells[selectedFrog.boardFrogIndex + 18].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex + 9] < 12 && checkerBoard[selectedFrog.boardFrogIndex + 9] !== null) {
+      selectedFrog.eighteenthSpace = true;
+    }
+    
+    if (checkerBoard[selectedFrog.boardFrogIndex - 14] === null && cells[selectedFrog.boardFrogIndex - 14].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex - 7] < 12 && checkerBoard[selectedFrog.boardFrogIndex - 7] !== null) {
+      selectedFrog.minusFourteenthSpace = true;
+    }
+    
+    if (checkerBoard[selectedFrog.boardFrogIndex - 18] === null && cells[selectedFrog.boardFrogIndex - 18].classList.contains("empty") !== true && checkerBoard[selectedFrog.boardFrogIndex - 9] < 12 && checkerBoard[selectedFrog.boardFrogIndex - 9] !== null) {
+      selectedFrog.minusEighteenthSpace = true;
+    }
+  }
+  
+  checkFrogCon();
+}
 
+//changes the movement variable when the frog is queened
+function checkFrogCon() {
+  if (selectedFrog.isQueen) {
+    borderFrog();
+  } else {
+    if (turn) {
+      selectedFrog.minusSeventhSpace = false;
+      selectedFrog.minusNinthSpace = false;
+      selectedFrog.minusFourteenthSpace = false;
+      selectedFrog.minusEighteenthSpace = false;
+    } else {
+      selectedFrog.seventhSpace = false;
+      selectedFrog.ninthSpace = false;
+      selectedFrog.fourteenthSpace = false;
+      selectedFrog.eighteenthSpace = false;
+    }
+    
+    borderFrog();
+  }
+}
 
-//when page loads
-window.onload = function() {
-  frogList = document.getElementsByClassName("check");  //collection of all frogs
-  bFrogList = document.getElementsByClassName("blue"); //collection of blue frogs
-  rFrogList = document.getElementsByClassName("red");  //collection of red frogs
+//showing a border to the player to show the frog is indeed movable
+function borderFrog() {
+  if (selectedFrog.seventhSpace || selectedFrog.ninthSpace || selectedFrog.fourteenthSpace || selectedFrog.eighteenthSpace || selectedFrog.minusSeventhSpace || selectedFrog.minusNinthSpace || selectedFrog.minusFourteenthSpace || selectedFrog.minusEighteenthSpace) {
+    document.getElementById(selectedFrog.frogID).style.border = "5px solid green";
+    
+    clickableCells();
+  } else {
+    return;
+  }
+}
+
+//shows the cells that are available to click
+function clickableCells() {
+  if (selectedFrog.seventhSpace) {
+    cells[selectedFrog.boardFrogIndex + 7].setAttribute("onclick", "moveFrog(7)");
+  }
   
-  frogCount = frogList.length;    //how many frogs total
-  bFrogCount = bFrogList.length; //how many blue frogs on board
-  rFrogCount = rFrogList.length; //how many red frogs on board
+  if (selectedFrog.ninthSpace) {
+    cells[selectedFrog.boardFrogIndex + 9].setAttribute("onclick", "moveFrog(9)");
+  }
   
-  assignPieces();
+  if (selectedFrog.fourteenthSpace) {
+    cells[selectedFrog.boardFrogIndex + 14].setAttribute("onclick", "moveFrog(14)");
+  }
   
-  for (i = 0; i < frogCount; i++) {
-    frogList[i].onclick = function() {
-      frogClicked(this);
+  if (selectedFrog.eighteenthSpace) {
+    cells[selectedFrog.boardFrogIndex + 18].setAttribute("onclick", "moveFrog(18)");
+  }
+  
+  if (selectedFrog.minusSeventhSpace) {
+    cells[selectedFrog.boardFrogIndex - 7].setAttribute("onclick", "moveFrog(-7)");
+  }
+  
+  if (selectedFrog.minusNinthSpace) {
+    cells[selectedFrog.boardFrogIndex - 9].setAttribute("onclick", "moveFrog(-9)");
+  }
+  
+  if (selectedFrog.minusFourteenthSpace) {
+    cells[selectedFrog.boardFrogIndex - 14].setAttribute("onclick", "moveFrog(-14)");
+  }
+  
+  if (selectedFrog.minusEighteenthSpace) {
+    cells[selectedFrog.boardFrogIndex - 18].setAttribute("onclick", "moveFrog(-18)");
+  }
+}
+
+//moving the frog that was previously selectedFrog
+function moveFrog(num) {
+  document.getElementById(selectedFrog.frogID).remove();
+  cells[selectedFrog.boardFrogIndex].innerHTML = "";
+  
+  if (turn) {
+    if (selectedFrog.isQueen) {
+      //cells[selectedFrog.boardFrogIndex + num].innerHTML = 
     }
   }
 }
+
+/*I got up to this point with coding before I realized I should've made my HTML code based around a table instead of placing the png images I have made to allow the code to be more malleable 
+with the JavaScript. With the HTML code I have now, I can still add the movement, but because my classes and ID's are labelled the way they are, I've only made this issue more difficult.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
